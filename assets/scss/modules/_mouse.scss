@@ -1,0 +1,22 @@
+#mouse {
+    --size: 1.5rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999999;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    margin-top: calc(-1 * var(--size) / 2);
+    margin-left: calc(-1 * var(--size) / 2);
+    border: 1px solid $white;
+    mix-blend-mode: difference;
+
+    @media #{$mq-md-min} {
+        display: flex;
+    }
+}

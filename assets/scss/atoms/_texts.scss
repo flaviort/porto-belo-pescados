@@ -1,0 +1,31 @@
+.text-small {
+	font-size: .85rem;
+
+	@media #{$mq-2xl-min} {
+		font-size: .75rem;
+	}
+}
+
+.text-medium {
+	font-size: 1.175rem;
+}
+
+.text-medium-big {
+	font-size: clamp(1.25rem, 1.75vw, 1.5rem);
+	line-height: 1.1;
+}
+
+.text-big {
+	font-size: clamp(1.5rem, 3vw, 2.5rem);
+	line-height: 1.1;
+}
+
+.text-bigger {
+	font-size: clamp(2rem, 4.25vw, 3.75rem);
+	line-height: 1.1;
+}
+
+.text-biggest {
+	font-size: clamp(4rem, 6.75vw, 6rem);
+	line-height: 1;
+}

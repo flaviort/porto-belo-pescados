@@ -1,0 +1,31 @@
+@mixin gradient-top($color, $height) {
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: $height;
+        background: linear-gradient(0deg, transparentize($color, 1) 0%, $color 100%);
+    }
+}
+
+@mixin gradient-bottom($color, $height) {
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: $height;
+        background: linear-gradient(0deg, transparentize($color, 1) 0%, $color 100%);
+    }
+}

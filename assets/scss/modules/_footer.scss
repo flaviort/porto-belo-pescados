@@ -1,0 +1,128 @@
+.footer {
+    z-index: 0;
+
+    .footer-wrapper {
+        background-color: $blue-dark;
+        padding-top: clamp(3rem, 7vw, 6rem);
+        padding-bottom: clamp(1.5rem, 3vw, 2rem);
+        text-align: center;
+
+        @media #{$mq-sm-min} {
+            text-align: left;
+        }
+
+        .fishes {
+            display: none;
+            position: absolute;
+            top: 80%;
+            right: -15rem;
+            color: $blue;
+            width: 70vw;
+
+            @media #{$mq-md-min} {
+                display: block;
+            }
+
+            @media #{$mq-lg-min} {
+                top: 65%;
+            }
+
+            @media #{$mq-2xl-min} {
+                top: 60%;
+                right: -10rem;
+            }
+
+            span {
+                display: block;
+
+                svg {
+                    width: 100%;
+                }
+            }
+        }
+
+        .container {
+            @media #{$mq-md-min} {
+                position: relative;
+                z-index: 2;
+            }
+
+            .top {
+                @media #{$mq-sm-min} {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    gap: 5vw;
+                }
+
+                @media #{$mq-lg-min} {
+                    justify-content: flex-start;
+                }
+
+                @media #{$mq-xl-min} {
+                    gap: 10vw;
+                }
+
+                .logo {
+                    display: block;
+                    width: 12rem;
+                    margin: 0 auto 2rem auto;
+
+                    @media #{$mq-sm-min} {
+                        width: 18rem;
+                        margin: 0;
+                    }
+
+                    @media #{$mq-lg-min} {
+                        width: 15rem;
+                    }
+                }
+
+                .right {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    column-gap: 3vw;
+                    row-gap: 2rem;
+                    color: $white;
+
+                    @media #{$mq-lg-min} {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+
+                    @media #{$mq-xl-min} {
+                        column-gap: 7vw;
+                    }
+
+                    li {
+                        display: flex;
+                        flex-direction: column;
+                        gap: .25rem;
+
+                        p {
+                            font-weight: $bold;
+                            color: $blue;
+                        }
+
+                        a {
+                            @media #{$mq-sm-max} {
+                                margin: auto;
+                                word-break: break-all;
+                            }
+                        }
+
+                        .phone {
+
+                        }
+                    }
+                }
+            }
+
+            .bottom {
+                margin-top: clamp(1.5rem, 5vw, 4rem);
+                padding-top: clamp(1rem, 3vw, 2rem);
+                border-top: 1px solid $blue;
+                color: $blue;
+            }
+        }
+    }
+}

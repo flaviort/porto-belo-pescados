@@ -1,0 +1,34 @@
+// variables
+@import 'variables/colors';
+@import 'variables/fonts';
+@import 'variables/breakpoints';
+
+// mixins
+@import 'mixins/gradients';
+
+// utils
+@import 'utils/colors';
+
+// globals
+@import 'atoms/breakpoints';
+
+// atoms
+@import 'atoms/scroll';
+@import 'atoms/containers';
+@import 'atoms/fonts';
+@import 'atoms/texts';
+@import 'atoms/buttons';
+@import 'atoms/form';
+@import 'atoms/animations';
+@import 'atoms/global';
+@import 'atoms/reusable';
+
+// modules
+@import 'modules/top-menu';
+@import 'modules/fs-menu';
+@import 'modules/footer';
+@import 'modules/opening';
+@import 'modules/mouse';
+
+// pages
+@import 'pages/home';
