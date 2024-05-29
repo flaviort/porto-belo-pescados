@@ -4,91 +4,47 @@
 
             <div class='top'>
 
-                <a href='./' class='logo magnetic' data-strength='30'>
-                    <?php echo file_get_contents('assets/svg/icon.svg'); ?>
+                <a href='#banner' class='logo magnetic' data-strength='30' sliding-link>
+                    <?= file_get_contents('assets/svg/logo/icon.svg'); ?>
                 </a>
 
                 <button class='close-fs magnetic' data-strength='30'>
-                    <?php echo file_get_contents('assets/svg/ux/close.svg'); ?>
+                    <?= file_get_contents('assets/svg/ux/close.svg'); ?>
                 </button>
 
             </div>
 
             <ul class='menu text-big'>
+                <?php
+                    $menu = [
+                        [
+                            'name' => 'Home',
+                            'link' => '#banner'
+                        ],
+                        [
+                            'name' => 'Quem Somos',
+                            'link' => '#quem-somos'
+                        ],
+                        [
+                            'name' => 'Produtos',
+                            'link' => '#produtos'
+                        ],
+                        [
+                            'name' => 'Contato',
+                            'link' => '#contato'
+                        ]
+                    ];
+                ?>
 
-                <li>
-                    <a href='./'>
-                        Home
-                    </a>
-                </li>
-
-                <li>
-                    <a href='<?php echo($sobre); ?>'>
-                        Sobre
-                    </a>
-                </li>
-
-                <li>
-                    <a href='<?php echo($diagnostico); ?>'>
-                        Diagnóstico
-                    </a>
-                </li>
-
-                <li>
-                    <a href='<?php echo($consultoria); ?>' target='_blank'>
-                        Consultoria
-                    </a>
-                </li>
-
-                <li>
-                    <a href='<?php echo($podcast); ?>'>
-                        Podcast
-                    </a>
-                </li>
-
-                <li>
-                    <a href='<?php echo($blog); ?>'>
-                        Blog
-                    </a>
-                </li>
-
-                <li>
-                    <a href='<?php echo($whatsapp); ?>'>
-                        Fale Conosco
-                    </a>
-                </li>
+                <?php foreach ($menu as $item): ?>
+                    <li>
+                        <a href='<?= ($item['link']); ?>' class='sliding-link'>
+                            <?= ($item['name']); ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
 
             </ul>
-
-            <div class='bottom text-small'>
-
-                <ul class='social'>
-
-                    <li>
-                        <a href='<?php echo($linkedin); ?>' target='_blank' rel='noopener' class='hover-underline'>
-                            Linkedin
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href='<?php echo($youtube); ?>' target='_blank' rel='noopener' class='hover-underline'>
-                            Youtube
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href='<?php echo($instagram); ?>' target='_blank' rel='noopener' class='hover-underline'>
-                            Instagram
-                        </a>
-                    </li>
-
-                </ul>
-
-                <p>
-                    Weagle® Governance <?php echo date('Y'); ?>
-                </p>
-
-            </div>
 
         </div>
     </div>

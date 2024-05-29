@@ -5,22 +5,25 @@
     left: 0;
     width: 100%;
     padding: 1.5rem 0;
-    padding-right: 7rem;
     background-color: transparent;
 
     @media #{$mq-sm-min} {
         padding: 1.325rem 0;
     }
 
-    .container {
+    .flex {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: space-between;
         gap: 5vw;
 
         .logo {
             display: flex;
-            width: 12rem;
+            width: 15rem;
+
+            @media #{$mq-sm-min} {
+                width: 18rem;
+            }
 
             &:hover {
                 svg {
@@ -40,47 +43,22 @@
             }
         }
 
-        p {
-            text-transform: uppercase;
-            opacity: .75;
+        .open-fs {
+            color: $white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            padding: .25rem;
 
-            @media #{$mq-sm-max} {
-                display: none;
+            @media #{$mq-sm-min} {
+                padding: .375rem;
             }
-        }
-    }
-}
 
-#main-content {
-    &.reverse-menu {
-        #top-menu {
-            .container {
-                .logo {
-                    .letter {
-                        fill: $white;
-                    }
-                }
-
-                p {
-                    color: $white;
-                }
-            }
-        }
-    }
-
-    &.full-white-menu {
-        #top-menu {
-            .container {
-                .logo {
-                    .icon,
-                    .letter {
-                        fill: $white;
-                    }
-                }
-
-                p {
-                    color: $white;
-                }
+            svg {
+                width: 100%;
+                height: auto;
             }
         }
     }

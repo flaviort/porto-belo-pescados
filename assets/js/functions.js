@@ -1,5 +1,5 @@
 // register split text
-gsap.registerPlugin(ScrollTrigger, SplitText)
+gsap.registerPlugin(ScrollTrigger, SplitText, Draggable)
 
 // global selectors
 const body = document.body
@@ -9,8 +9,12 @@ const selectId = (id) => document.getElementById(id)
 const vh = (coef) => window.innerHeight * (coef/100)
 const vw = (coef) => window.innerWidth * (coef/100)
 
-// locomotive scroll
-let scroll
+let lenis
+
+// check for touch devices
+function isTouchScreenDevice() {
+	return 'ontouchstart' in window || navigator.maxTouchPoints
+}
 
 // init all click, mouseover and keyup functions
 function initClickAndKeyFunctions() {
@@ -38,8 +42,8 @@ function initClickAndKeyFunctions() {
 		})
 
 		tl.call(function() {
-			scroll.stop()
 			$('.open-fs').addClass('active')
+			lenis.stop()
 		})
 
 		tl.to('.blur-fs-bg', {
@@ -97,8 +101,8 @@ function initClickAndKeyFunctions() {
 		})
 
 		tl.call(function() {
-			scroll.start()
 			$('.open-fs').removeClass('active')
+			lenis.start()
 		})
 	}
 
@@ -121,12 +125,10 @@ function initMagneticButtons() {
     
 	// found via: https://codepen.io/tdesero/pen/RmoxQg
 	var magnets = document.querySelectorAll('.magnetic')
-	var strength = 100
 
 	if(window.innerWidth > 540){
 		magnets.forEach( (magnet) => {
 			magnet.addEventListener('mousemove', moveMagnet )
-			$(this.parentNode).removeClass('not-active')
 			magnet.addEventListener('mouseleave', function(event) {
 				gsap.to( event.currentTarget, 1.5, {
 					x: 0, 
@@ -142,9 +144,9 @@ function initMagneticButtons() {
 			var magnetsStrength = magnetButton.getAttribute('data-strength')
 				
 			gsap.to( magnetButton, 1.5, {
-				x: ((( event.clientX - bounding.left)/magnetButton.offsetWidth) - 0.5) * magnetsStrength,
-				y: ((( event.clientY - bounding.top)/magnetButton.offsetHeight) - 0.5) * magnetsStrength,
-				rotate: "0.001deg",
+				x: ((( event.clientX - bounding.left)/magnetButton.offsetWidth) - 0.5) * magnetsStrength || 30,
+				y: ((( event.clientY - bounding.top)/magnetButton.offsetHeight) - 0.5) * magnetsStrength || 30,
+				rotate: '0.001deg',
 				ease: Power4.easeOut
 			})
 		}
@@ -153,6 +155,33 @@ function initMagneticButtons() {
 
 // here goes all the scroll related animations
 function scrollTriggerAnimations() {
+
+	// bg video fade
+	if($('.bg-video').length) {
+		gsap.to('.bg-video .overlay', {
+			ease: 'none',
+			opacity: 1,
+			scrollTrigger: {
+				trigger: '#banner',
+				endTrigger: '#quem-somos',
+				scrub: 3,
+				start: '10% top',
+				end: 'bottom 20%'
+			}
+		})
+
+		gsap.to('.bg-video video', {
+			scale: 2,
+			rotation: -10,
+			scrollTrigger: {
+				trigger: '#banner',
+				endTrigger: '#quem-somos',
+				scrub: 3,
+				start: '10% top',
+				end: 'bottom 20%'
+			}
+		})
+	}
 
 	// fill title
 	if($('.fill-title').length) {
@@ -165,9 +194,9 @@ function scrollTriggerAnimations() {
 				ease: 'none',
 				scrollTrigger: {
 					trigger: target,
-					scrub: 2,
-					start: 'top 97%',
-					end: 'top 50%'
+					scrub: 3,
+					start: 'top 90%',
+					end: 'top 60%'
 				}
 			})
 		})
@@ -195,7 +224,7 @@ function scrollTriggerAnimations() {
             text.anim = gsap.from(text.split.chars, {
                 scrollTrigger: {
                     trigger: text,
-                    start: 'top 85%'
+                    start: 'top 80%'
                 },
                 duration: .75,
                 ease: 'circ.out', 
@@ -216,14 +245,13 @@ function initSliders() {
 
 		const products_slider = new Swiper('.products-slider', {
 			slidesPerView: 1,
-			loop: true,
+			//loop: true,
 			simulateTouch: true,
 			allowTouchMove: true,
 			autoHeight: false,
 			calculateHeight: false,
-			spaceBetween: 10,
+			spaceBetween: 50,
 			speed: 600,
-			freeMode: true,
 			slideToClickedSlide: true,
 			centeredSlides: true,
 			mousewheel: {  
@@ -242,14 +270,25 @@ function initSliders() {
                 nextEl: '.products-slider .next',
                 prevEl: '.products-slider .prev'
             },
+			effect: 'coverflow',
+			coverflowEffect: {
+				rotate: 0,
+				stretch: -30,
+				depth: 0,
+				modifier: 1,
+				slideShadows: false,
+			},
 			breakpoints: {
-				575: {
+				992: {
 					slidesPerView: 2,
-					spaceBetween: 20
-				},
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 30
+					spaceBetween: 20,
+					coverflowEffect: {
+						rotate: 0,
+						stretch: -30,
+						depth: 50,
+						modifier: 10,
+						slideShadows: false,
+					}
 				}
 			},
 			on: {
@@ -307,64 +346,10 @@ function initMouseCursor() {
 	window.addEventListener('mousemove', moveCircle)
 }
 
-// init smooth scroll
-function initSmoothScroll() {
-
-    scroll = new LocomotiveScroll({
-      	el: body.querySelector('[data-scroll-container]'),
-      	smooth: true,
-		getDirection: true
-    })
-
-	new ResizeObserver(() => scroll.update()).observe(
-		document.querySelector('[data-scroll-container]')
-	)
-
-    window.onresize = scroll.update()
-
-    scroll.on('scroll', () => ScrollTrigger.update())
-
-    ScrollTrigger.scrollerProxy('[data-scroll-container]', {
-      	scrollTop(value) {
-        	return arguments.length ? scroll.scrollTo(value, 0, 0) : scroll.scroll.instance.scroll.y
-      	}, // we don't have to define a scrollLeft because we're only scrolling vertically
-      	getBoundingClientRect() {
-        	return {
-				top: 0,
-				left: 0,
-				width: window.innerWidth,
-				height: window.innerHeight
-			}
-      	},
-      	// locomotive scroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the locomotive scroll - controlled element)
-      	pinType: body.querySelector('[data-scroll-container]').style.transform ? 'transform' : 'fixed'
-    })
-
-    function isTouchScreendevice() {
-		return 'ontouchstart' in window || navigator.maxTouchPoints
-  	}
-
-	if(!isTouchScreendevice()){
-		ScrollTrigger.defaults({
-			scroller: document.querySelector('[data-scroll-container]')
-		})
-	}
-
-    // each time the window updates, we should refresh scroll trigger and then update locomotive scroll
-    ScrollTrigger.addEventListener('refresh', () => scroll.update())
-
-    // after everything is set up, refresh() scroll trigger and update locomotive scroll because padding may have been added for pinning, etc
-    ScrollTrigger.refresh()
-}
-
 // check is the user is in a touch device
 function initCheckTouchDevice() {
-    
-	function isTouchScreendevice() {
-	  	return 'ontouchstart' in window || navigator.maxTouchPoints
-	}
 	
-	if(isTouchScreendevice()){
+	if(isTouchScreenDevice()){
 		$('main').addClass('touch')
 		$('main').removeClass('no-touch')
 		$('#mouse').remove()
@@ -375,7 +360,7 @@ function initCheckTouchDevice() {
 	}
 
 	$(window).resize(function() {
-	  	if(isTouchScreendevice()){
+	  	if(isTouchScreenDevice()){
 			$('main').addClass('touch')
 			$('main').removeClass('no-touch')
 			$('#mouse').remove()
@@ -386,6 +371,68 @@ function initCheckTouchDevice() {
 	  	}
 	})
   
+}
+
+// init lenis
+function initLenis() {
+	lenis = new Lenis({
+		duration: 2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+	})
+
+	lenis.on('scroll', ScrollTrigger.update)
+
+	gsap.ticker.add((time)=>{
+		lenis.raf(time * 1000)
+	})
+
+	gsap.ticker.lagSmoothing(0)
+}
+
+// custom scrollbar
+function initCustomScrollBar() {
+	let scrollbar = document.querySelector('[data-scrollbar]')
+	let scrollbarHeight = scrollbar.getBoundingClientRect().height
+	let thumb = document.querySelector('[data-scrollbar] [data-scrollbar-thumb]')
+	let thumbHeight = thumb.getBoundingClientRect().height
+	let content = document.querySelector('[data-scroll-container]')
+	let contentHeight = content.getBoundingClientRect().height
+
+	if(document.querySelector('[data-scrollbar-thumb-height="variable"]')) {
+		gsap.set(thumb, {
+			height: (scrollbarHeight / contentHeight * scrollbarHeight)
+		})
+		thumbHeight = (scrollbarHeight / contentHeight * scrollbarHeight)
+	}
+
+	let scrollTween = gsap.to(thumb, {
+		y: (scrollbarHeight - thumbHeight),
+		ease: 'none',
+		scrollTrigger: {
+			start: '0%',
+			end:'max',
+			scrub: true
+		}
+	})
+	
+	Draggable.create(thumb, {
+		type: 'y',
+		bounds: scrollbar,
+		inertia: false,
+		onDrag() {
+			let progress = gsap.utils.normalize(this.minY, this.maxY, this.y)
+			lenis.scrollTo((contentHeight - scrollbarHeight) * progress,{
+				immediate: true
+			})
+			$(scrollbar).attr('data-scrollbar-drag', 'true')
+		},
+		onRelease() {
+			let progress = gsap.utils.normalize(this.minY, this.maxY, this.y)
+			scrollTween.scrollTrigger.enable()
+			scrollTween.progress(progress)
+			$(scrollbar).attr('data-scrollbar-drag', 'false')
+		}
+	})
 }
 
 // disable console warnings and show the copyright message
@@ -407,10 +454,6 @@ function openingAnimation() {
 
 	opening.set('body', {
 		overflow: 'hidden'
-	})
-
-	opening.call(function() {
-		scroll.stop()
 	})
 
 	opening.to('#opening .box', {
@@ -444,7 +487,6 @@ function openingAnimation() {
 	})
 
 	opening.call(function() {
-		scroll.start()
 		document.dispatchEvent(new Event('animationIn'))
 	})
 
@@ -487,14 +529,19 @@ function openingAnimation() {
 
 // fire all scripts
 function initScripts() {
-	scrollTriggerAnimations()
+	initLenis()
+	initCustomScrollBar()
 	initCheckTouchDevice()
 	initClickAndKeyFunctions()
-	initSmoothScroll()
 	initSliders()
 	initMagneticButtons()
 	initCopyright()
 	openingAnimation()
+	scrollTriggerAnimations()
+
+	setTimeout(function() {
+		ScrollTrigger.refresh()
+	}, 1000)
 }
 
 initScripts()
@@ -509,7 +556,7 @@ document.addEventListener('animationIn', function() {
 		linesClass: 'split-line'
 	})
 
-	tl.from('#banner video', {
+	tl.from('#fishes video', {
 		autoAlpha: 0, 
 		yPercent: 40,
 		duration: 1,
@@ -523,12 +570,5 @@ document.addEventListener('animationIn', function() {
 		autoAlpha: 0, 
 		stagger: 0.0375
 	}, '-=.75')
-
-	tl.from('#banner .side', {
-		scale: 0,
-		duration: .6,
-		ease: 'circ.out',
-		transformOrigin: '100% 100%'
-	}, '-=1.5')
 
 })

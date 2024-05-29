@@ -30,6 +30,11 @@
 			<meta property='og:image:width' content='1200' />
 			<meta property='og:image:height' content='630' />
 
+			<!-- google fonts -->
+			<link rel='preconnect' href='https://fonts.googleapis.com'>
+			<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+			<link href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap' rel='stylesheet'>
+
 			<!-- css -->
 			<link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css' />
 			<link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css' />
@@ -46,6 +51,10 @@
 				<?php include('components/fs-menu.php');?>
 				<div id='mouse'></div>
 			</header>
+
+			<div class='scrollbar' data-scrollbar data-scrollbar-drag='false'>
+				<div class='thumb' data-scrollbar-thumb data-scrollbar-thumb-height='variable'></div>
+			</div>
 
 			<main id='main-content' class='<?php echo($current_page); ?>'>
 				<div class='main-wrap' data-scroll-container>

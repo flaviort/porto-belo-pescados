@@ -14,7 +14,7 @@
 	}
 
 	to {
-		transform: translateY(-15rem);
+		transform: translateY(15rem);
 	}
 }
 
@@ -45,8 +45,8 @@
 .fill-title > * {
 	background: linear-gradient(
 		to right,
-		$blue 50%,
-		$black 50%
+		$black 50%,
+		$gray-lightest 50%
 	);
 	background-size: 200% 100%;
 	background-position-x: 100%;

@@ -1,10 +1,8 @@
-                <section id='contato' class='footer' data-scroll-section>
-                    <div class='footer-wrapper' data-scroll data-scroll-speed='-4' data-scroll-position='bottom'>
+                <section id='contato' class='footer'>
+                    <div class='footer-wrapper'>
 
                         <div class='fishes'>
-                            <span data-scroll data-scroll-speed='2' data-scroll-position='bottom'>
-                                <?= file_get_contents('assets/svg/other/fishes.svg'); ?>
-                            </span>
+                            <?= file_get_contents('assets/svg/other/fishes.svg'); ?>
                         </div>
 
                         <div class='container'>
@@ -81,9 +79,10 @@
 
         <footer>
             <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js'></script>
-            <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js'></script>
-            <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js'></script>
-            <script src='https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js'></script>
+            <script src='https://unpkg.com/lenis@1.0.45/dist/lenis.min.js'></script> 
+            <script src='https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js'></script>
+            <script src='https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js'></script>
+            <script src='https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Draggable.min.js'></script>
             <script src='https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js'></script>
             <script src='assets/js/vendor/split-text.min.js'></script>
             <script src='assets/js/functions.min.js' defer></script>

@@ -4,53 +4,71 @@
 	include('components/head.php');
 ?>
 
-<section id='banner' class='bg-black' data-scroll-section>
+<div class='bg-video'>
 
-	<video autoplay playsinline muted loop class='lazy' preload='none' data-scroll data-scroll-speed='-3' data-scroll-position='top'>
-		<source data-src='assets/videos/professor.mp4'>
+	<div class='overlay'></div>
+
+	<video class='desk cover' autoplay playsinline muted loop preload='none'>
+		<source src='assets/videos/bg-desk.mp4'>
 	</video>
 
-	<div class='side blue transitionUp'>
-		<?php echo file_get_contents('assets/svg/curve-bottom-right.svg'); ?>
-	</div>
+	<!--video class='mob cover' autoplay playsinline muted loop preload='none'>
+		<source src='assets/videos/bg-mob.mp4'>
+	</video-->
 
-	<div class='container white transitionUp' data-scroll data-scroll-speed='3' data-scroll-position='top'>
+</div>
 
-		<h1 class='text-biggest text-plane'>
-			Na Prática <br />
-			a teoria <br />
-			é outra
-		</h1>
+<section id='banner'>
+	<div class='container'>
+		<div class='flex'>
 
-		<p class='text-medium desc'>
-			Preparamos sua empresa para venda ou sucessão através de governança ágil.
-		</p>
+			<h1 class='text-biggest'>
+				Frescor do Mar, <br />
+				Sabor na Sua Mesa
+			</h1>
 
-		<a href='<?php echo($diagnostico); ?>' class='rotating-button white magnetic' data-strength='100'>
-
-			<div class='rotating-text'>
-				<div class='inner-text'>
-					<?php echo file_get_contents('assets/svg/circle-text-1.svg'); ?>
-				</div>
+			<div class='scroll'>
+				<div></div>
 			</div>
 
-			<div class='circle'>
-				<?php echo file_get_contents('assets/svg/ux/arrow-right.svg'); ?>
-				<?php echo file_get_contents('assets/svg/ux/arrow-right.svg'); ?>
-			</div>
-
-		</a>
-
+		</div>
 	</div>
-
 </section>
 
-<section id='produtos' class='' data-scroll-section>
+<section id='quem-somos'>
+	<div class='container'>
+		<div class='flex'>
+
+			<h2 class='text-biggest reveal-text bold'>
+				Quem Somos
+			</h2>
+
+			<p>
+				Somos uma empresa brasileira, especializada na compra, processamento e comercialização de pescados. 
+
+				Mergulhamos no frescor dos mares para trazer até você peixes saborosos e saudáveis. Desde as águas até sua mesa, nossos produtos são selecionados com cuidado, garantindo qualidade e satisfação em cada mordida. 
+			</p>
+
+			<h3 class='text-medium-big'>
+				<strong>
+					Desfrute do sabor do mar com a Porto Belo Pescados!
+				</strong>
+			</h3>
+
+			<a href="#produtos" class='magnetic sliding-link' data-strength='100'>
+				Nossos Produtos
+			</a>
+
+		</div>
+	</div>
+</section>
+
+<section id='produtos' class='padding-y'>
 	<div class='container'>
 
 		<div class='top'>
 
-			<h2 class='text-big reveal-text fill-title'>
+			<h2 class='text-biggest fill-title bold'>
 				Produtos
 			</h2>
 
@@ -60,11 +78,11 @@
 
 		<div class='products-slider swiper-container'>
 
-			<button class='product-nav prev'>
+			<button class='product-nav prev magnetic' data-strength='100'>
 				<?= file_get_contents('assets/svg/ux/arrow-left.svg'); ?>
 			</button>
 
-			<button class='product-nav next'>
+			<button class='product-nav next magnetic' data-strength='100'>
 				<?= file_get_contents('assets/svg/ux/arrow-right.svg'); ?>
 			</button>
 
@@ -77,9 +95,9 @@
 
 						<div class='top'>
 
-							<div class='image'>
+							<div class='image magnetic' data-strength='50'>
 
-								<img src='<?= $item['image'] ?>' alt='<?= $item['title'] ?>'>
+								<img src='<?= $item['image'] ?>' alt='<?= $item['title'] ?>' class='magnetic' data-strength='100'>
 						
 								<div class='bg'>
 									<div class='inner'></div>

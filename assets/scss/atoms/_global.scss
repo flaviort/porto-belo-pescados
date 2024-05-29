@@ -101,42 +101,8 @@ main,
 	position: relative;
 }
 
-main,
-section {
-	overflow: hidden;
-	background-color: $white;
-}
-
 main {
-	box-sizing: border-box;
-	position: relative;
 	overflow: hidden;
-	width: 100vw;
-	height: 100%;
-
-	@media #{$mq-1024-min} {
-		position: fixed;
-	}
-
-	&.touch {
-		position: relative;
-		height: auto;
-
-		.main-wrap {
-			position: relative;
-		}
-	}
-
-	.main-wrap {
-		box-sizing: border-box;
-		position: relative;
-		width: 100vw;
-		will-change: transform;
-
-		@media #{$mq-1024-min} {
-			position: fixed;
-		}
-	}
 }
 
 html,
