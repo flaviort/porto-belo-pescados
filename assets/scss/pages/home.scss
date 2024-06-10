@@ -24,10 +24,18 @@
 
             .desk {
                 opacity: .675;
+
+                @media #{$mq-md-max} {
+                    display: none;
+                }
             }
 
             .mob {
+                opacity: .675;
 
+                @media #{$mq-md-min} {
+                    display: none;
+                }
             }
         }
 
@@ -224,12 +232,19 @@
                 .swiper-slide {
                     &.swiper-slide-active {
                         .top {
+                            filter: none;
+                            transform: none;
+
                             .image {
                                 pointer-events: all;
 
                                 .bg {
+                                    animation: breath 4.23s .6s linear infinite;
+
                                     .inner {
-                                        transform: translate(-50%, -50%) scale(1);
+                                        opacity: 1;
+                                        width: 80%;
+                                        padding-bottom: 80%;
                                     }
                                 }
                             }
@@ -243,6 +258,9 @@
 
                     .top {
                         text-align: center;
+                        filter: blur(.25rem);
+                        transition: filter .3s ease-in-out, transform .3s ease-in-out;
+                        transform: scale(.825);
 
                         .image {
                             position: relative;
@@ -268,12 +286,14 @@
                                     top: 50%;
                                     left: 50%;
                                     transform: translate(-50%, -50%) scale(0);
-                                    width: 80%;
                                     height: 0;
-                                    padding-bottom: 80%;
                                     border-radius: 50%;
                                     background-color: $blue;
                                     transition: .6s ease-in-out;
+                                    animation: breath 7.43s .6s linear infinite;
+                                    opacity: 0;
+                                    width: 0;
+                                    padding-bottom: 0;
                                 }
                             }
 

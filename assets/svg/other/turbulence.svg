@@ -1,0 +1,19 @@
+<svg id='turbulence' viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient gradientUnits="userSpaceOnUse" cx="338.4" cy="334.7" r="300" id="gradient-0" gradientTransform="matrix(1.32627, -1.43392, 1.25346, 1.15933, -568.34728, 326.86813)">
+      <stop offset="0" style="stop-color: rgb(51, 237, 250);"></stop>
+      <stop offset="1" style="stop-color: rgb(28, 0, 170);"></stop>
+    </radialGradient>
+    <filter id="warp-filter" color-interpolation-filters="sRGB"  bx:preset="warp 1 8 0.25">
+      <feComponentTransfer>
+        <feFuncR type="table" tableValues="1 0.5"></feFuncR>
+      </feComponentTransfer>
+      <feMerge result="a">
+        <feMergeNode></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+      <feTurbulence type="fractalNoise" baseFrequency="0.010" numOctaves="1" result="warp"></feTurbulence>
+      <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="8" in="a" in2="warp"></feDisplacementMap>
+    </filter>
+  </defs>
+</svg>

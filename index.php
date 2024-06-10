@@ -12,9 +12,9 @@
 		<source src='assets/videos/bg-desk.mp4'>
 	</video>
 
-	<!--video class='mob cover' autoplay playsinline muted loop preload='none'>
+	<video class='mob cover' autoplay playsinline muted loop preload='none'>
 		<source src='assets/videos/bg-mob.mp4'>
-	</video-->
+	</video>
 
 </div>
 

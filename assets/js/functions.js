@@ -183,6 +183,25 @@ function scrollTriggerAnimations() {
 		})
 	}
 
+	// parallax footer
+	if($('#contato').length) {
+
+		const height = document.querySelector('#contato').getBoundingClientRect().height
+
+		gsap.from('#contato .footer-wrapper', {
+			ease: 'none',
+			filter: 'blur(.5rem)',
+			opacity: 0,
+			y: height * -.5,
+			scrollTrigger: {
+				trigger: '#contato',
+				scrub: true,
+				start: 'top bottom',
+				end: () => `+=${height} bottom`
+			}
+		})
+	}
+
 	// fill title
 	if($('.fill-title').length) {
 
@@ -234,6 +253,20 @@ function scrollTriggerAnimations() {
             })
         })
 
+	}
+
+	// water effect
+	if($('#turbulence').length) {
+
+		gsap.to('#turbulence feTurbulence', {
+			duration: 30,
+			repeat: -1,
+			yoyo: true,
+			ease: 'none',
+			attr: {
+				baseFrequency: 0.07
+			}
+		})
 	}
 }
 
@@ -536,39 +569,8 @@ function initScripts() {
 	initSliders()
 	initMagneticButtons()
 	initCopyright()
-	openingAnimation()
+	//openingAnimation()
 	scrollTriggerAnimations()
-
-	setTimeout(function() {
-		ScrollTrigger.refresh()
-	}, 1000)
 }
 
 initScripts()
-
-// if the user is entering the website for the first time, this will detect the opening animation and animate the banner accordingly
-document.addEventListener('animationIn', function() {
-
-	var tl = gsap.timeline()
-
-	var text = new SplitText('#banner h1', { 
-		type: 'lines, words, chars',
-		linesClass: 'split-line'
-	})
-
-	tl.from('#fishes video', {
-		autoAlpha: 0, 
-		yPercent: 40,
-		duration: 1,
-		ease: 'circ.out', 
-	}, '+=.7')
-
-	tl.from(text.chars, {
-		duration: .75,
-		ease: 'circ.out', 
-		yPercent: 100,
-		autoAlpha: 0, 
-		stagger: 0.0375
-	}, '-=.75')
-
-})
