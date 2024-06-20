@@ -39,7 +39,7 @@
 			<link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css' />
 			<link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css' />
 			<link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css' />
-			<link rel='stylesheet' type='text/css' href='assets/css/vendor/bootstrap-grid.css'>
+			<link rel='stylesheet' type='text/css' href='assets/css/vendor/bootstrap-grid.min.css'>
 			<link rel='stylesheet' type='text/css' href='assets/css/main.min.css'>
 			
 		</head>
