@@ -254,20 +254,6 @@ function scrollTriggerAnimations() {
         })
 
 	}
-
-	// water effect
-	if($('#turbulence').length) {
-
-		gsap.to('#turbulence feTurbulence', {
-			duration: 30,
-			repeat: -1,
-			yoyo: true,
-			ease: 'none',
-			attr: {
-				baseFrequency: 0.07
-			}
-		})
-	}
 }
 
 // init all sliders
@@ -480,6 +466,20 @@ function initCopyright() {
 function openingAnimation() {
 
 	const opening = gsap.timeline()
+	const openingOut = gsap.timeline({
+		paused: true
+	})
+
+	const bannerText = $('#banner h1')
+
+	bannerText.split = new SplitText(bannerText, { 
+		type: 'lines, words, chars',
+		linesClass: 'split-line'
+	})
+
+	bannerText.anim = gsap.set(bannerText.split.chars, {
+		autoAlpha: 0
+	})
 
 	opening.set('html', {
 		cursor: 'wait'
@@ -489,75 +489,85 @@ function openingAnimation() {
 		overflow: 'hidden'
 	})
 
-	opening.to('#opening .box', {
-		autoAlpha: 0,
-		duration: 0
+	opening.call(function() {
+		lenis.stop()
+
+		$('#opening video').get(0).addEventListener('ended', function() {
+			openingOut.play()
+		})
 	})
 
-	opening.from('#opening .logo svg .icon', {
-		xPercent: 81.7,
-		duration: 1,
-		ease: Power2.easeOut,
-		delay: .75
-	})
-
-	opening.from('#opening .logo svg .letter', {
-		xPercent: -150,
-		autoAlpha: 0,
-		duration: 1.25,
-		stagger: .1,
-		ease: 'elastic.out(.5, .3)'
-	}, '-=.7')
-
-	opening.to('html', {
+	openingOut.to('html', {
 		cursor: 'auto',
 		duration: 0
 	})
 
-	opening.to('body', {
+	openingOut.to('body', {
 		overflow: 'auto',
 		duration: 0
 	})
 
-	opening.call(function() {
-		document.dispatchEvent(new Event('animationIn'))
+	openingOut.call(function() {
+		lenis.start()
 	})
 
 	if ($(window).width() > 993) { 
-		opening.set('#opening .rounded-div-wrap.bottom', { 
+		openingOut.set('#opening .rounded-div-wrap.bottom', { 
 		  	height: '10vh'
 		})
 	} else {
-		opening.set('#opening .rounded-div-wrap.bottom', { 
+		openingOut.set('#opening .rounded-div-wrap.bottom', { 
 		  	height: '5vh'
 		})
 	}
 
-	opening.to('#opening .logo svg path', {
-		yPercent: -150,
-		duration: 1,
-		stagger: .05,
-		ease: 'elastic.out(.5, .3)'
+	openingOut.to('#opening .logo', {
+		autoAlpha: 0,
+		filter: 'blur(1rem)',
+		duration: .8,
+		ease: 'Power3.easeInOut'
 	})
 
-	opening.to('#opening .bg', {
-		duration: .8,
-		yPercent: -100,
-		ease: 'Power3.easeInOut'
-	}, '-=.9')
+	openingOut.call(function() {
+		
+		bannerText.anim = gsap.fromTo(bannerText.split.chars, {
+			y: '100%',
+			autoAlpha: 0
+		}, {
+			duration: .75,
+			ease: 'circ.out', 
+			y: 0,
+			autoAlpha: 1, 
+			stagger: 0.0375
+		})
 
-	opening.to('#opening .rounded-div-wrap.bottom', {
+	})
+
+	openingOut.fromTo('#opening .bg', {
+		yPercent: 0
+	}, {
+		yPercent: -100,
+		duration: .8,
+		ease: 'Power3.easeInOut'
+	}, '-=.5')
+
+	openingOut.to('#opening .rounded-div-wrap.bottom', {
 		duration: .85,
 		height: '0',
 		ease: 'Power3.easeInOut'
 	}, '-=.6')
 
-	opening.to('#opening', {
+	openingOut.from('.bg-video video', {
+		autoAlpha: 0,
+		duration: 5,
+		ease: 'Power2.easeInOut'
+	}, '-=1.5')
+
+	openingOut.to('#opening', {
 		pointerEvents: 'none',
 		autoAlpha: 0,
 		duration: 0
 	})
-	
 }
 
 // fire all scripts
@@ -569,7 +579,7 @@ function initScripts() {
 	initSliders()
 	initMagneticButtons()
 	initCopyright()
-	//openingAnimation()
+	openingAnimation()
 	scrollTriggerAnimations()
 }
 

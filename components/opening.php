@@ -7,8 +7,9 @@
     </div>
 
     <div class='logo'>
-        <div class='box'></div>
-        <?php echo file_get_contents('assets/svg/logo/logo-horizontal.svg'); ?>
+        <video autoplay playsinline muted>
+            <source src='assets/videos/logo.mp4'>
+        </video>
     </div>
 
 </section>
