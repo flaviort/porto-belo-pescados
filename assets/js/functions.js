@@ -502,6 +502,10 @@ function openingAnimation() {
 		duration: 0
 	})
 
+	openingOut.to('#opening', {
+		pointerEvents: 'none',
+	})
+
 	openingOut.to('body', {
 		overflow: 'auto',
 		duration: 0

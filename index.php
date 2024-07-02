@@ -27,10 +27,6 @@
 				Sabor na Sua Mesa
 			</h1>
 
-			<div class='scroll'>
-				<div></div>
-			</div>
-
 		</div>
 	</div>
 </section>

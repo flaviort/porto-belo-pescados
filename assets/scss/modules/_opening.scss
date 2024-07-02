@@ -64,8 +64,12 @@
             transform: none;
         }
 
-        @media #{$mq-lg-min} {
-            max-width: 80vw;
+        @media #{$mq-md-min} {
+            max-width: 75vw;
+        }
+
+        @media #{$mq-xl-min} {
+            max-width: 50vw;
         }
 
         &:before {
