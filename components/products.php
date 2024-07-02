@@ -64,19 +64,7 @@
             'details' => [
                 [
                     'icon' => 'assets/svg/other/box-transparent.svg',
-                    'description' => '--',
-                ],
-                [
-                    'icon' => 'assets/svg/other/sachet.svg',
-                    'description' => '--',
-                ],
-                [
-                    'icon' => 'assets/svg/other/box.svg',
-                    'description' => '--',
-                ],
-                [
-                    'icon' => 'assets/svg/other/box-light.svg',
-                    'description' => '--',
+                    'description' => 'Inteira Granel',
                 ]
             ]
         ],

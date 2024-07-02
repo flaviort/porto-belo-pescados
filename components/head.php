@@ -8,7 +8,7 @@
 			<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 			<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
 			<meta name='format-detection' content='telephone=no'>
-			<link rel='shortcut icon' href='favicon.png'>
+			<link rel='shortcut icon' href='assets/img/favicon.svg'>
 
 			<meta name='author' content='<?php echo($site_title); ?>'>
 
@@ -25,8 +25,8 @@
 			<meta property='og:description' content='<?php echo($site_desc); ?>' />
 			<meta property='og:url' content='<?php echo($site_url); ?>/' />
 			<meta property='og:site_name' content='<?php echo($site_title); ?>' />
-			<meta property='og:image' content='<?php echo($site_url); ?>/assets/img/og-image.jpg' />
-			<meta property='og:image:secure_url' content='<?php echo($site_url); ?>/assets/img/og-image.jpg' />
+			<meta property='og:image' content='<?php echo($site_url); ?>/assets/img/og-image.png' />
+			<meta property='og:image:secure_url' content='<?php echo($site_url); ?>/assets/img/og-image.png' />
 			<meta property='og:image:width' content='1200' />
 			<meta property='og:image:height' content='630' />
 

@@ -1,6 +1,6 @@
 <?php
 	$current_page = 'home';
-	$page_title = 'Home';
+	$page_title = '';
 	include('components/head.php');
 ?>
 

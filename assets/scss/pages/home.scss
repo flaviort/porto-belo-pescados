@@ -39,7 +39,6 @@
             }
         }
 
-
         #banner {
             .flex {
                 position: relative;
@@ -49,6 +48,10 @@
                 text-align: center;
                 height: 100svh;
                 color: $white;
+
+                h1 {
+                    font-family: $font-title;
+                }
 
                 .scroll {
                     position: absolute;
