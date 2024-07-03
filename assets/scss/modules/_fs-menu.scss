@@ -15,7 +15,7 @@
 
         .blue-box {
             background-color: $blue-dark;
-            border-radius: 1.5rem;
+            border-radius: 1rem;
             padding: 1rem 1.75rem;
             width: 100%;
             transform: scale(0);
@@ -23,28 +23,18 @@
             will-change: transform;
 
             @media #{$mq-xs-min} {
-                width: 25rem;
+                width: fit-content;
             }
 
             @media #{$mq-sm-min} {
-                padding: 1.5rem 2rem;
+                padding: 1.5rem;
             }
 
             .top {
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
+                justify-content: flex-end;
                 gap: 1rem;
-
-                .logo {
-                    display: flex;
-                    width: 6rem;
-                    height: auto;
-
-                    svg {
-                        width: 100%;
-                    }
-                }
 
                 .close-fs {
                     display: flex;
@@ -73,10 +63,18 @@
             .menu {
                 padding: 4vh 0;
 
+                @media #{$mq-md-min} {
+                    padding: 1vh 0;
+                }
+
                 li {
                     display: block;
                     border-bottom: 1px solid $white;
                     padding: 1.5vh 0;
+
+                    @media #{$mq-md-min} {
+                        padding: 1vh 0;
+                    }
 
                     &:last-child {
                         border-bottom: none;
@@ -86,6 +84,10 @@
                         display: inline-block;
                         font-size: 5vh;
                         transition: .3s ease-in-out;
+
+                        @media #{$mq-md-min} {
+                            font-size: 4.25vh;
+                        }
 
                         &:hover,
                         &.active {
@@ -108,4 +110,5 @@
     height: 100%;
     backdrop-filter: blur(.5rem);
     opacity: 0;
+    background-color: transparentize($blue, .75);
 }

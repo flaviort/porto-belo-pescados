@@ -183,6 +183,19 @@ function scrollTriggerAnimations() {
 		})
 	}
 
+	// products fadeIn
+	if($('#produtos').length) {
+		gsap.from('#produtos', {
+			scale: .8,
+			scrollTrigger: {
+				trigger: '#produtos',
+				scrub: true,
+				start: 'top bottom',
+				end: 'top 70%'
+			}
+		})
+	}
+
 	// parallax footer
 	if($('#contato').length) {
 
@@ -338,7 +351,8 @@ function initMouseCursor() {
 				width: '5rem',
 				height: '5rem',
 				marginTop: '-2.5rem',
-				marginLeft: '-2.5rem'
+				marginLeft: '-2.5rem',
+				backgroundColor: 'transparent'
 			})
 		})
 	}
@@ -346,10 +360,11 @@ function initMouseCursor() {
 	for (let i = 0; i < links.length; i++) {
 		links[i].addEventListener('mouseleave', function(){
 			gsap.to(mouse, {
-				width: '1.5rem',
-				height: '1.5rem',
-				marginTop: '-.75rem',
-				marginLeft: '-.75rem'
+				width: '1rem',
+				height: '1rem',
+				marginTop: '-.5rem',
+				marginLeft: '-.5rem',
+				backgroundColor: '#03caff'
 			})
 		})
 	}

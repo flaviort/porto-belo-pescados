@@ -4,10 +4,6 @@
 
             <div class='top'>
 
-                <a href='#banner' class='logo magnetic' data-strength='30' sliding-link>
-                    <?= file_get_contents('assets/svg/logo/icon.svg'); ?>
-                </a>
-
                 <button class='close-fs magnetic' data-strength='30'>
                     <?= file_get_contents('assets/svg/ux/close.svg'); ?>
                 </button>

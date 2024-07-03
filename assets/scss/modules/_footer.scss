@@ -14,22 +14,21 @@
         .fishes {
             display: none;
             position: absolute;
-            top: 80%;
-            right: -15rem;
+            top: 90%;
+            right: -10rem;
             color: $blue;
-            width: 70vw;
+            width: 60vw;
 
             @media #{$mq-md-min} {
                 display: block;
             }
 
             @media #{$mq-lg-min} {
-                top: 65%;
+                top: 70%;
             }
 
             @media #{$mq-2xl-min} {
-                top: 60%;
-                right: -20rem;
+                width: 50vw;
             }
 
             span {
