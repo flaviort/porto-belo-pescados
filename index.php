@@ -23,8 +23,8 @@
 		<div class='flex'>
 
 			<h1 class='text-biggest'>
-				Frescor do Mar, <br />
-				Sabor na Sua Mesa
+				Frescor do mar, <br />
+				sabor na sua mesa
 			</h1>
 
 		</div>

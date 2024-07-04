@@ -8,7 +8,7 @@
 
     <div class='logo'>
         <video autoplay playsinline muted>
-            <source src='assets/videos/logo.mp4'>
+            <source src='assets/videos/logo.mp4?v2'>
         </video>
     </div>
 

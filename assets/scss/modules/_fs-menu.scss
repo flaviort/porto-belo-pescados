@@ -33,18 +33,28 @@
             .top {
                 display: flex;
                 align-items: center;
-                justify-content: flex-end;
+                justify-content: space-between;
                 gap: 1rem;
+
+                .logo {
+                    display: flex;
+                    width: 5rem;
+                    height: auto;
+
+                    svg {
+                        width: 100%;
+                    }
+                }
 
                 .close-fs {
                     display: flex;
-                    width: 2.5rem;
-                    min-width: 2.5rem;
-                    height: 2.5rem;
+                    width: 2rem;
+                    min-width: 2rem;
+                    height: 2rem;
                     background-color: $white;
                     color: $blue;
                     border-radius: 50%;
-                    padding: .75rem;
+                    padding: .675rem;
 
                     &:hover {
                         svg {
@@ -64,16 +74,15 @@
                 padding: 4vh 0;
 
                 @media #{$mq-md-min} {
-                    padding: 1vh 0;
+                    padding: 3vh 0 1vh 0;
                 }
 
                 li {
                     display: block;
-                    border-bottom: 1px solid $white;
                     padding: 1.5vh 0;
 
                     @media #{$mq-md-min} {
-                        padding: 1vh 0;
+                        padding: .25vh 0;
                     }
 
                     &:last-child {
@@ -86,7 +95,7 @@
                         transition: .3s ease-in-out;
 
                         @media #{$mq-md-min} {
-                            font-size: 4.25vh;
+                            font-size: 4vh;
                         }
 
                         &:hover,
@@ -108,7 +117,7 @@
     pointer-events: none;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(.5rem);
+    backdrop-filter: blur(.15rem);
     opacity: 0;
     background-color: transparentize($blue, .75);
 }

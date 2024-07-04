@@ -519,6 +519,7 @@ function openingAnimation() {
 
 	openingOut.to('#opening', {
 		pointerEvents: 'none',
+		duration: 0
 	})
 
 	openingOut.to('body', {

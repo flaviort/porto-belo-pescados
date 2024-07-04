@@ -116,6 +116,11 @@
             border-top-right-radius: clamp(2rem, 6vw, 5rem);
             background-color: $white;
 
+            @media #{$mq-sm-max} {
+                padding-top: var(--big);
+                padding-bottom: var(--big);
+            }
+
             .top {
                 text-align: center;
 
@@ -134,7 +139,11 @@
                     margin-top: 3rem;
                     position: relative;
                     z-index: 5;
-                    margin-bottom: -3rem;
+                    margin-bottom: -2rem;
+
+                    @media #{$mq-sm-min} {
+                        margin-bottom: -3rem;
+                    }
 
                     .swiper-pagination-bullet {
                         position: relative;
@@ -230,13 +239,17 @@
                                 pointer-events: all;
 
                                 .bg {
-                                    animation: breath 4.23s .6s linear infinite;
+                                    //animation: breath 4.23s .6s linear infinite;
 
                                     .inner {
                                         opacity: 1;
                                         width: 80%;
                                         padding-bottom: 80%;
                                     }
+                                }
+
+                                img {
+                                    animation: fishJump 1s ease-out forwards;
                                 }
                             }
                         }
@@ -276,12 +289,12 @@
                                     z-index: 1;
                                     top: 50%;
                                     left: 50%;
-                                    transform: translate(-50%, -50%) scale(0);
-                                    height: 0;
+                                    transform: translate(-50%, -50%) scale(1);
+                                    height: var(--scroll-size);
                                     border-radius: 50%;
                                     background-color: $blue;
                                     transition: .6s ease-in-out;
-                                    animation: breath 7.43s .6s linear infinite;
+                                    //animation: breath 7.43s .6s linear infinite;
                                     opacity: 0;
                                     width: 0;
                                     padding-bottom: 0;
@@ -298,7 +311,7 @@
                             position: relative;
                             z-index: 2;
                             font-size: 2rem;
-                            margin-top: -20vw;
+                            margin-top: -5vw;
 
                             @media #{$mq-sm-min} {
                                 margin-top: -8rem;
@@ -425,5 +438,23 @@
     100% {
 		transform: translateY(var(--scroll-size));
         height: var(--scroll-size);
+	}
+}
+
+@keyframes fishJump {
+	0% {
+		transform: scale(1);
+	}
+
+    30% {
+		transform: scale(.75);
+	}
+
+    60% {
+        transform: scale(1.175) rotate(-2deg);
+    }
+
+    100% {
+		transform: scale(1);
 	}
 }
