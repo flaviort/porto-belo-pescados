@@ -485,17 +485,6 @@ function openingAnimation() {
 		paused: true
 	})
 
-	const bannerText = $('#banner h1')
-
-	bannerText.split = new SplitText(bannerText, { 
-		type: 'lines, words, chars',
-		linesClass: 'split-line'
-	})
-
-	bannerText.anim = gsap.set(bannerText.split.chars, {
-		autoAlpha: 0
-	})
-
 	opening.set('html', {
 		cursor: 'wait'
 	})
@@ -548,21 +537,6 @@ function openingAnimation() {
 		ease: 'Power3.easeInOut'
 	})
 
-	openingOut.call(function() {
-		
-		bannerText.anim = gsap.fromTo(bannerText.split.chars, {
-			y: '100%',
-			autoAlpha: 0
-		}, {
-			duration: .75,
-			ease: 'circ.out', 
-			y: 0,
-			autoAlpha: 1, 
-			stagger: 0.0375
-		})
-
-	})
-
 	openingOut.fromTo('#opening .bg', {
 		yPercent: 0
 	}, {
@@ -570,6 +544,11 @@ function openingAnimation() {
 		duration: .8,
 		ease: 'Power3.easeInOut'
 	}, '-=.5')
+
+	openingOut.from('#banner h1', {
+		autoAlpha: 0,
+		y: 100
+	}, '-=.2')
 
 	openingOut.to('#opening .rounded-div-wrap.bottom', {
 		duration: .85,

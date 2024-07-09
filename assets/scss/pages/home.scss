@@ -347,15 +347,15 @@
                         opacity: 0;
                         visibility: hidden;
                         transition: .3s ease-in-out;
+                        gap: 1rem;
 
                         @media #{$mq-sm-min} {
-                            display: flex;
-                            justify-content: center;
                             flex-wrap: nowrap;
+                            gap: 3rem;
                         }
 
                         @media #{$mq-xl-min} {
-                            gap: 3rem;
+                            gap: 5rem;
                         }
                         
                         .icon {
@@ -403,13 +403,17 @@
 
                             p {
                                 text-align: left;
-                                width: 5rem;
+                                width: auto;
                                 font-size: .875rem;
                                 line-height: 1.2;
 
                                 @media #{$mq-sm-min} {
-                                    width: 6.5rem;
                                     line-height: 1.4;
+                                }
+
+                                b {
+                                    font-size: 85%;
+                                    font-weight: 600;
                                 }
                             }
                         }

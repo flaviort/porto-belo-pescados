@@ -120,7 +120,8 @@
 									<?= file_get_contents($detail['icon']); ?>
 
 									<p>
-										<?= $detail['description'] ?>
+										<b><?= $detail['description'] ?></b> <br />
+										<span><?= $detail['description_small'] ?></span>
 									</p>
 
 								</div>

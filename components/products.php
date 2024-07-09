@@ -7,19 +7,23 @@
             'details' => [
                 [
                     'icon' => 'assets/svg/other/box-transparent.svg',
-                    'description' => 'Inteira Granel',
+                    'description' => 'Inteira',
+                    'description_small' => 'Granel',
                 ],
                 [
                     'icon' => 'assets/svg/other/sachet.svg',
-                    'description' => 'Posta Pacote 1kg',
+                    'description' => 'Posta',
+                    'description_small' => 'Pacote 1kg',
                 ],
                 [
                     'icon' => 'assets/svg/other/box.svg',
-                    'description' => 'Posta Granel Go G',
+                    'description' => 'Posta Granel',
+                    'description_small' => 'Go G',
                 ],
                 [
                     'icon' => 'assets/svg/other/box-light.svg',
-                    'description' => 'Posta Granel Go M',
+                    'description' => 'Posta Granel',
+                    'description_small' => 'Go M',
                 ]
             ]
         ],
@@ -30,11 +34,13 @@
             'details' => [
                 [
                     'icon' => 'assets/svg/other/box-transparent.svg',
-                    'description' => 'Inteira Granel',
+                    'description' => 'Inteira',
+                    'description_small' => 'Granel',
                 ],
                 [
                     'icon' => 'assets/svg/other/sachet.svg',
-                    'description' => 'Eviscerada pct 1kg',
+                    'description' => 'Eviscerada',
+                    'description_small' => 'Pct 1kg',
                 ]
             ]
         ],
@@ -45,15 +51,18 @@
             'details' => [
                 [
                     'icon' => 'assets/svg/other/sachet.svg',
-                    'description' => 'Filé pct 1kg',
+                    'description' => 'Filé',
+                    'description_small' => 'Pct 1kg',
                 ],
                 [
                     'icon' => 'assets/svg/other/sachet.svg',
-                    'description' => 'HG pct 1kg',
+                    'description' => 'HG',
+                    'description_small' => 'Pct 1kg',
                 ],
                 [
                     'icon' => 'assets/svg/other/sachet.svg',
-                    'description' => 'Espalmada pct 1kg',
+                    'description' => 'Espalmada',
+                    'description_small' => 'Pct 1kg',
                 ]
             ]
         ],
@@ -64,7 +73,8 @@
             'details' => [
                 [
                     'icon' => 'assets/svg/other/box-transparent.svg',
-                    'description' => 'Inteira Granel',
+                    'description' => 'Inteira',
+                    'description_small' => 'Granel',
                 ]
             ]
         ],
@@ -75,7 +85,8 @@
             'details' => [
                 [
                     'icon' => 'assets/svg/other/sachet.svg',
-                    'description' => 'Eviscerada pct 1kg',
+                    'description' => 'Eviscerada',
+                    'description_small' => 'Pct 1kg',
                 ]
             ]
         ],
@@ -86,11 +97,13 @@
             'details' => [
                 [
                     'icon' => 'assets/svg/other/sachet.svg',
-                    'description' => 'Inteira pct 1kg',
+                    'description' => 'Inteira',
+                    'description_small' => 'Pct 1kg',
                 ],
                 [
                     'icon' => 'assets/svg/other/sachet.svg',
-                    'description' => 'Espalmada pct 1kg',
+                    'description' => 'Espalmada',
+                    'description_small' => 'Pct 1kg',
                 ]
             ]
         ],
@@ -101,7 +114,8 @@
             'details' => [
                 [
                     'icon' => 'assets/svg/other/box-transparent.svg',
-                    'description' => 'Inteira Granel',
+                    'description' => 'Inteira',
+                    'description_small' => 'Granel',
                 ]
             ]
         ],
@@ -112,7 +126,8 @@
             'details' => [
                 [
                     'icon' => 'assets/svg/other/sachet.svg',
-                    'description' => 'Eviscerada pct 1kg',
+                    'description' => 'Eviscerada',
+                    'description_small' => 'Pct 1kg',
                 ]
             ]
         ],
