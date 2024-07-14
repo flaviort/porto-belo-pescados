@@ -140,17 +140,23 @@
                     gap: .5rem;
                     flex-wrap: wrap;
                     text-align: center;
-                    margin-top: 3rem;
+                    margin-top: 1.5rem;
                     position: relative;
                     z-index: 5;
-                    margin-bottom: -2rem;
+                    margin-bottom: -3rem;
+                    font-size: .9rem;
 
                     @media #{$mq-sm-min} {
-                        margin-bottom: -3rem;
+                        margin-bottom: -7rem;
+                    }
+
+                    @media #{$mq-lg-min} {
+                        margin-bottom: -5rem;
                     }
 
                     @media #{$mq-xl-min} {
                         margin-top: 1.5rem;
+                        margin-bottom: -3rem;
                     }
 
                     .swiper-pagination-bullet {
@@ -312,8 +318,11 @@
                             img {
                                 position: relative;
                                 z-index: 2;
-                                height: 75vh;
-                                margin: auto;
+
+                                @media #{$mq-xl-min} {
+                                    width: 35vw;
+                                    margin: auto;
+                                }
                             }
                         }
 
@@ -321,7 +330,7 @@
                             position: relative;
                             z-index: 2;
                             font-size: 2.25rem;
-                            margin-top: -5vw;
+                            margin-top: -12vw;
 
                             @media #{$mq-sm-min} {
                                 margin-top: -8rem;
@@ -329,12 +338,12 @@
 
                             @media #{$mq-md-min} {
                                 font-size: 2.75rem;
-                                margin-top: -6rem;
+                                margin-top: -7rem;
                             }
 
                             @media #{$mq-xl-min} {
                                 font-size: 4rem;
-                                margin-top: -9rem;
+                                margin-top: -8.5rem;
                             }
                         }
 
@@ -352,15 +361,17 @@
                         justify-content: center;
                         flex-wrap: wrap;
                         width: 100%;
-                        gap: 1rem;
+                        gap: .25rem;
                         margin-top: 1.5rem;
                         opacity: 0;
                         visibility: hidden;
                         transition: .3s ease-in-out;
-                        gap: 1rem;
 
-                        @media #{$mq-sm-min} {
+                        @media #{$mq-xs-min} {
                             flex-wrap: nowrap;
+                        }
+
+                        @media #{$mq-lg-min} {
                             gap: 3rem;
                         }
 
@@ -371,6 +382,22 @@
                         .icon {
                             position: relative;
 
+                            @media #{$mq-lg-max} {
+                                border: 1px solid $gray-lighter;
+                                padding: 1rem;
+                                border-radius: .5rem;
+                                width: calc(100% / 4);
+                            }
+
+                            @media #{$mq-sm-max} {
+                                border-color: $gray-lightest;
+                                padding: .875rem;
+                                border-radius: .25rem;
+                                max-width: 50%;
+                                width: calc(100% / 2 - .25rem);
+                                //flex: 1;
+                            }
+
                             &:first-child {
                                 &:before {
                                     content: none;
@@ -378,7 +405,7 @@
                             }
 
                             &:before {
-                                @media #{$mq-md-min} {
+                                @media #{$mq-lg-min} {
                                     content: '';
                                     position: absolute;
                                     top: 0;
@@ -394,9 +421,9 @@
                             }
 
                             svg {
-                                width: 1.75rem;
-                                min-width: 1.75rem;
-                                height: 1.75rem;
+                                width: 2rem;
+                                min-width: 2rem;
+                                height: 2rem;
 
                                 @media #{$mq-sm-min} {
                                     width: 2.5rem;
@@ -414,11 +441,12 @@
                             p {
                                 text-align: left;
                                 width: auto;
-                                font-size: .875rem;
+                                font-size: .9rem;
                                 line-height: 1.2;
 
                                 @media #{$mq-sm-min} {
                                     line-height: 1.4;
+                                    font-size: .875rem;
                                 }
 
                                 b {
