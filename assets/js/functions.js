@@ -267,6 +267,23 @@ function scrollTriggerAnimations() {
         })
 
 	}
+
+	// logo rotate
+	gsap.to('#top-menu .logo .icon svg', {
+        rotation: 720,
+		repeat: -1,
+        duration: 3,
+		repeatDelay: 1,
+        ease: 'Power3.easeInOut'
+    })
+
+	gsap.to('#contato .logo .icon svg', {
+        rotation: 720,
+		repeat: -1,
+        duration: 3,
+		repeatDelay: 1,
+        ease: 'Power3.easeInOut'
+    })
 }
 
 // init all sliders

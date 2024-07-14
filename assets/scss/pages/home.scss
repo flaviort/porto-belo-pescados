@@ -123,6 +123,8 @@
 
             .top {
                 text-align: center;
+                position: relative;
+                z-index: 3;
 
                 h2 {
                     width: fit-content;
@@ -143,6 +145,10 @@
 
                     @media #{$mq-sm-min} {
                         margin-bottom: -3rem;
+                    }
+
+                    @media #{$mq-xl-min} {
+                        margin-bottom: -5rem;
                     }
 
                     .swiper-pagination-bullet {
@@ -264,7 +270,7 @@
                         text-align: center;
                         filter: blur(.25rem);
                         transition: filter .3s ease-in-out, transform .3s ease-in-out;
-                        transform: scale(.825);
+                        transform: scale(.75);
 
                         .image {
                             position: relative;
@@ -304,6 +310,8 @@
                             img {
                                 position: relative;
                                 z-index: 2;
+                                height: 75vh;
+                                margin: -1rem auto auto auto;
                             }
                         }
 
@@ -324,7 +332,7 @@
 
                             @media #{$mq-xl-min} {
                                 font-size: 3.25rem;
-                                margin-top: -10rem;
+                                margin-top: -8rem;
                             }
                         }
 

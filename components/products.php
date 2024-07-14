@@ -41,6 +41,11 @@
                     'icon' => 'assets/svg/other/sachet.svg',
                     'description' => 'Eviscerada',
                     'description_small' => 'Pct 1kg',
+                ],
+                [
+                    'icon' => 'assets/svg/other/sachet-transparent.svg',
+                    'description' => 'Eviscerada',
+                    'description_small' => 'Granel',
                 ]
             ]
         ],
@@ -58,6 +63,11 @@
                     'icon' => 'assets/svg/other/sachet.svg',
                     'description' => 'HG',
                     'description_small' => 'Pct 1kg',
+                ],
+                [
+                    'icon' => 'assets/svg/other/sachet-transparent.svg',
+                    'description' => 'HG',
+                    'description_small' => 'Granel',
                 ],
                 [
                     'icon' => 'assets/svg/other/sachet.svg',
@@ -87,6 +97,16 @@
                     'icon' => 'assets/svg/other/sachet.svg',
                     'description' => 'Eviscerada',
                     'description_small' => 'Pct 1kg',
+                ],
+                [
+                    'icon' => 'assets/svg/other/sachet.svg',
+                    'description' => 'Espalmada',
+                    'description_small' => 'Pct 1kg',
+                ],
+                [
+                    'icon' => 'assets/svg/other/sachet-transparent.svg',
+                    'description' => 'Eviscerada',
+                    'description_small' => 'Granel',
                 ]
             ]
         ],
@@ -101,9 +121,9 @@
                     'description_small' => 'Pct 1kg',
                 ],
                 [
-                    'icon' => 'assets/svg/other/sachet.svg',
-                    'description' => 'Espalmada',
-                    'description_small' => 'Pct 1kg',
+                    'icon' => 'assets/svg/other/box-transparent.svg',
+                    'description' => 'Inteira',
+                    'description_small' => 'Granel',
                 ]
             ]
         ],

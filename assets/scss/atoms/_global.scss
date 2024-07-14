@@ -116,4 +116,8 @@ body {
 	font-size: 15px;
 	font-size: clamp(15px, 1.325vw, 20px);
 	line-height: 1.6;
+
+	@media #{$mq-2xl-min} {
+		font-size: 1.04166725vw;
+	}
 }

@@ -10,7 +10,13 @@
                             <div class='top'>
 
                                 <a href='./' class='logo magnetic' data-strength='50'>
+                                    
+                                    <span class='icon'>
+                                        <?= file_get_contents('assets/svg/logo/icon-simple.svg'); ?>
+                                    </span>
+
                                     <?= file_get_contents('assets/svg/logo/logo-vertical.svg'); ?>
+
                                 </a>
 
                                 <ul class='right'>
