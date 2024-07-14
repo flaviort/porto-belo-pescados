@@ -62,6 +62,8 @@
 
                 h1 {
                     font-family: $font-title;
+                    font-size: clamp(4rem, 7.5vw, 6.75rem);
+	                line-height: .7;
                 }
             }
         }
