@@ -150,7 +150,7 @@
                     }
 
                     @media #{$mq-xl-min} {
-                        margin-bottom: -5rem;
+                        margin-top: 1.5rem;
                     }
 
                     .swiper-pagination-bullet {
@@ -285,9 +285,9 @@
                                 top: 50%;
                                 left: 50%;
                                 transform: translate(-50%, -50%);
-                                width: 75%;
+                                width: 65%;
                                 height: 0;
-                                padding-bottom: 75%;
+                                padding-bottom: 65%;
                                 border-radius: 50%;
                                 background-color: $gray-lightest;
                                 transition: .3s ease-in-out;
@@ -313,14 +313,14 @@
                                 position: relative;
                                 z-index: 2;
                                 height: 75vh;
-                                margin: -1rem auto auto auto;
+                                margin: auto;
                             }
                         }
 
                         h2 {
                             position: relative;
                             z-index: 2;
-                            font-size: 2rem;
+                            font-size: 2.25rem;
                             margin-top: -5vw;
 
                             @media #{$mq-sm-min} {
@@ -333,8 +333,8 @@
                             }
 
                             @media #{$mq-xl-min} {
-                                font-size: 3.25rem;
-                                margin-top: -8rem;
+                                font-size: 4rem;
+                                margin-top: -9rem;
                             }
                         }
 
@@ -394,9 +394,9 @@
                             }
 
                             svg {
-                                width: 2rem;
-                                min-width: 2rem;
-                                height: 2rem;
+                                width: 1.75rem;
+                                min-width: 1.75rem;
+                                height: 1.75rem;
 
                                 @media #{$mq-sm-min} {
                                     width: 2.5rem;
@@ -405,9 +405,9 @@
                                 }
 
                                 @media #{$mq-md-min} {
-                                    width: 3.5rem;
-                                    min-width: 3.5rem;
-                                    height: 3.5rem;
+                                    width: 2.75rem;
+                                    min-width: 2.75rem;
+                                    height: 2.75rem;
                                 }
                             }
 

@@ -270,7 +270,7 @@ function scrollTriggerAnimations() {
 
 	// logo rotate
 	gsap.to('#top-menu .logo .icon svg', {
-        rotation: 720,
+        rotation: 360,
 		repeat: -1,
         duration: 3,
 		repeatDelay: 1,
@@ -278,7 +278,7 @@ function scrollTriggerAnimations() {
     })
 
 	gsap.to('#contato .logo .icon svg', {
-        rotation: 720,
+        rotation: 360,
 		repeat: -1,
         duration: 3,
 		repeatDelay: 1,
