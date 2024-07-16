@@ -142,15 +142,23 @@
                     align-items: center;
                 }
 
-                .paanda {
+                .flex {
                     display: flex;
-                    width: 7rem;
-                    height: auto;
-                    transition: .3s ease-in-out;
+                    gap: .25rem;
+                    align-items: center;
+                    justify-content: flex-start;
+                    color: $white;
 
-                    &:hover,
-                    &:focus {
-                        color: $white;
+                    .paanda {
+                        display: flex;
+                        width: 4rem;
+                        height: auto;
+                        transition: .3s ease-in-out;
+
+                        &:hover,
+                        &:focus {
+                            color: $blue;
+                        }
                     }
                 }
             }
