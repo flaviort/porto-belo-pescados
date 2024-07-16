@@ -74,6 +74,10 @@
                                     <?= $address ?>
                                 </p>
 
+                                <a href='https://paandadesign.com.br' target='_blank' class='paanda'>
+                                    <?= file_get_contents('assets/svg/logo/paanda.svg'); ?>
+                                </a>
+
                             </div>
 
                         </div>
