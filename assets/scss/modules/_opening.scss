@@ -10,6 +10,10 @@
     align-items: center;
     justify-content: center;
     background-color: transparent;
+
+    @media #{$mq-md-max} {
+        display: none;
+    }
     
     .bg {
         position: absolute;

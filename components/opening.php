@@ -7,8 +7,8 @@
     </div>
 
     <div class='logo'>
-        <video autoplay playsinline muted>
-            <source src='assets/videos/logo.mp4?v2'>
+        <video autoplay playsinline muted preload='auto'>
+            <source src='assets/videos/logo.mp4?v2' type='video/mp4'>>
         </video>
     </div>
 

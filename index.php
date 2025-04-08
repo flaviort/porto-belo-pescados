@@ -8,12 +8,12 @@
 
 	<div class='overlay'></div>
 
-	<video class='desk cover' autoplay playsinline muted loop preload='none'>
-		<source src='assets/videos/bg-desk.mp4'>
+	<video class='desk cover' autoplay playsinline muted loop preload='auto'>
+		<source src='assets/videos/bg-desk.mp4' type='video/mp4'>
 	</video>
 
-	<video class='mob cover' autoplay playsinline muted loop preload='none'>
-		<source src='assets/videos/bg-mob.mp4'>
+	<video class='mob cover' autoplay playsinline muted loop preload='auto'>
+		<source src='assets/videos/bg-mob.mp4' type='video/mp4'>
 	</video>
 
 </div>

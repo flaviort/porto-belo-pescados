@@ -595,8 +595,11 @@ function initScripts() {
 	initSliders()
 	initMagneticButtons()
 	initCopyright()
-	openingAnimation()
 	scrollTriggerAnimations()
+	
+	if (!isTouchScreenDevice()) {
+		openingAnimation()
+	}
 }
 
 initScripts()
